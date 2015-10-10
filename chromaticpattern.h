@@ -9,9 +9,9 @@
 class chromaticPattern
 {
 public:
-    chromaticPattern(int range, int numOfNotes, int lowest=35, int octaves=1);
+    chromaticPattern(int range, int numOfNotes, int tempo=100, int lowest=35, int octaves=1);
     QByteArray  getMidi();
-    void changeSettings(int range, int numOfNotes, int lowest=35, int octaves=1);
+    void changeSettings(int range, int numOfNotes, int tempo, int lowest, int octaves);
 
 
 private:
@@ -21,6 +21,7 @@ private:
     int __numOfNotes;
     int __lowest;
     int __octaves;
+    int __tempo;
 
 };
 

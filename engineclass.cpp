@@ -12,7 +12,7 @@ player->playFile();
 }
 void engineClass::newPattern(int range, int numOfNotes, int tempo)
 {
-       testPattern=new chromaticPattern(range,numOfNotes);
+       testPattern=new chromaticPattern(range,numOfNotes, tempo);
        testOutput=testPattern->getMidi();
        file.setFileName("test.midi");
        if(!file.open(QIODevice::WriteOnly)) {
