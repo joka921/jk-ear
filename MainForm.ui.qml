@@ -4,14 +4,15 @@ import QtQuick.Layouts 1.1
 
 Item {
    // width: 400
-    height: 40
+    Layout.minimumHeight: button1.implicitHeight+button2.implicitHeight+button3.implicitHeight
+    Layout.minimumWidth: button2.width
 
     property alias button3: button3
     property alias button2: button2
     property alias button1: button1
 
     ColumnLayout {
-
+        anchors.fill:parent
 
         Button {
             id: button1

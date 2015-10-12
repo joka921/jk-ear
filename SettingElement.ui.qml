@@ -7,21 +7,21 @@ Item {
     property alias labelDescription:labelDescription
     property alias labelValue: labelValue
 
-    height: 50
-    width:1
+    Layout.minimumHeight: mainLayout.implicitHeight
+    Layout.minimumWidth: 200
         ColumnLayout {
-        anchors.fill: parent
+            id: mainLayout
         Label {
             id:labelDescription
             text:"blabla"
-            height:1
+
 
         }
         RowLayout {
 
         Button {
             id: buttonNeg
-            width:5
+
             onClicked: { if (labelValue.text>1)
                            labelValue.text-=1;
 
@@ -33,7 +33,7 @@ Item {
 
         Label {
             id: labelValue
-            width: 5
+
 
 
 
@@ -41,7 +41,7 @@ Item {
         }
         Button {
             id:buttonPositive
-            width:10
+
             text: "+"
             onClicked: labelValue.text++
         }
