@@ -14,7 +14,8 @@ void engineClass::newPattern(int range, int numOfNotes, int tempo)
 {
        testPattern=new chromaticPattern(range,numOfNotes, tempo);
        testOutput=testPattern->getMidi();
-       file.setFileName("test.midi");
+       QDir tmpPath =QDir::tempPath();
+       file.setFileName(tmpPath.filePath("test.midi"));
        if(!file.open(QIODevice::WriteOnly)) {
            //std::cerr <<"Fehler"
         qDebug() << QString("Fileopenerror");

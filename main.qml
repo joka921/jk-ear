@@ -18,15 +18,14 @@ ApplicationWindow {
     minimumHeight: mainLayout.Layout.minimumHeight + 2 * margin
     visible: true
 
-    property var tempo:100
+    property var tempo:60
     property var numOfNotes: 3
-    property var range: 3
+    property var range: 12
 
     signal playExtern()
     signal stopExtern()
 
     signal newPattern(int range,int numOfNotes, int tempo)
-
 
 
 
@@ -50,33 +49,34 @@ RowLayout {
 SettingElement{
     id: settingRange
     labelDescription.text: "Range"
-    labelValue.text:"1"
+    labelValue.text: range
     labelValue.onTextChanged: firstLevelElement.range=labelValue.text
 }
 SettingElement {
     id: settingNumNotes
     labelDescription.text: "Number of Notes"
-    labelValue.text:"1"
+    labelValue.text:numOfNotes
     labelValue.onTextChanged: firstLevelElement.numOfNotes=labelValue.text
 
 }
 SettingElement {
     id: settingTempo
     labelDescription.text: "Tempo"
-    labelValue.text:"1"
+    labelValue.text:tempo
     labelValue.onTextChanged: firstLevelElement.tempo=labelValue.text
 }
 }
 
 MainForm {
     id: playbuttons
-    anchors.left: settings.right
+
     button1.onClicked: firstLevelElement.playExtern()
     button2.onClicked: {
         firstLevelElement.newPattern(firstLevelElement.range,firstLevelElement.numOfNotes, firstLevelElement.tempo)
 
 
 }
+
 
 }
 

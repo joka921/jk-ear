@@ -8,6 +8,7 @@
 #include <QFileInfo>
 #include "backendplayer.h"
 #include <QByteArray>
+#include <QDir>
 
 class engineClass : public QObject
 {

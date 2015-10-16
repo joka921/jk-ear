@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     QObject::connect(engine.rootObjects().first(),SIGNAL(playExtern()),logicEngine,SLOT(play()));
     QObject::connect(engine.rootObjects().first(),SIGNAL(newPattern(int,int, int)),logicEngine,SLOT(newPattern(int,int,int)));
     // QObject::connect(engine.rootObjects().first(),SIGNAL(stopExtern()),&playerAndroidTest,SLOT(stop()));
-    logicEngine->newPattern(3,3,100);
+    logicEngine->newPattern(12,3,60);
 
     return app.exec();
 
